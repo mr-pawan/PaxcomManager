@@ -1,0 +1,33 @@
+.container{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+ 
+}
+.cancelBtn{
+   width: 2rem;
+   height: 2rem;
+   position: relative;
+   left: 20rem;
+   top: 1rem;
+   transform: scale(1.4);
+}
+
+ .listGroup{
+    display: flex;
+    flex-direction: row; 
+    justify-content:space-between;
+} 
+.selectClient{
+    width: 14rem;
+}
+.saveBtn{
+    width: 5rem;
+}
+
+.input{
+    outline: none;
+    -webkit-appearance: none;
+}

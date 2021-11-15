@@ -1,0 +1,68 @@
+.body{
+    height: 100vh;
+    width: 100vw;
+    
+}
+.lowerBody{
+    height: 92vh;
+    width: 100%;
+    /* margin-top: 8vh; */
+    display: flex;
+    justify-content: center;
+
+}
+.container{
+    position: absolute;
+    top: 30%;
+    height: 47vh;
+    width: 20vw;
+    background-color:rgba(35, 67, 52, 0.3);
+    
+}
+.header{
+    height: 20%;
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #5025a5f5;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formFld{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    padding: 3.5%;
+    margin: 0.8rem 1.2rem;
+}
+.forgetFld{
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+    color: rgb(11, 11, 97);
+    font-size: 1rem;
+}
+.forgetFld:hover{
+    text-decoration: underline;
+}
+.registerBtn{
+    padding: 3.5%;
+    margin: 0 1.2rem 1.2rem;
+    cursor: pointer;
+    background-color: rgb(30, 30, 163);
+
+}
+.registerBtn:hover{
+    background-color: rgb(16, 16, 90);
+}
+/* .create{
+    margin-top: -0.8rem;
+    margin-left: 1.2rem;
+    font-size: 0.9rem;
+}
+.msg{
+    position: relative;
+    left: 1.5rem;
+    color: rgb(131, 0, 0);
+} */
