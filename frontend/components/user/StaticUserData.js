@@ -33,7 +33,9 @@ const StaticUserData = ({cancelBtnHandler, userData}) => {
                  src="/Images/user1.jpg"
                  className="card-img-top mx-auto"
                  alt="user-image"
-                 style={{width: '12rem', height:'12rem'}}
+                 width={100}
+                 height={250}
+
                      
                  />
                 <div className="card-body mx-auto">

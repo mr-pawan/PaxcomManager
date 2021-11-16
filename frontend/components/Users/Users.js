@@ -4,6 +4,7 @@ import styles from './Users.module.css';
 import User from '../user/User'
 import axios from 'axios';
 import Link from 'next/link';
+import Router from 'next/router';
 
 
 const Users = () => {
@@ -73,6 +74,8 @@ const Users = () => {
     const deleteUser = async() => {
         const response = await axios.post('http://localhost:8000/api/user/delete', userData);
         const data =  await response.data;
+        Router.reload(window.location.pathname);
+
     }
 
 
@@ -99,7 +102,7 @@ const Users = () => {
                                 </li>
                                 <li className={styles.liItem}> <i className={`fas fa-user-plus ${styles.icon}`}></i></li>
                                 <li className={styles.liItem}> 
-                                     <Link href="/dashboard/users"><i className={`fas fa-user-times ${styles.icon}`}
+                                     <Link href="/dashboard/users" passHref><i className={`fas fa-user-times ${styles.icon}`}
                                      onClick={deleteUser}></i></Link>
                                 </li>
                                 <li className={styles.liItem}> <i className={`fas fa-user-edit ${styles.icon}`} 

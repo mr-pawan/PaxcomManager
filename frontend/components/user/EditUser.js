@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
+import Router from 'next/router'
+
 
 
 const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
@@ -51,6 +53,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
         const response = await axios.post(`${process.env.NEXT_PUBLIC_CONTEXT}/api/user/update`, data);
         const res = await response.data;
         setEditUserStatus(false);
+        Router.reload(window.location.pathname)
 
     }
     
@@ -65,7 +68,9 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                 <Image src="/Images/user1.jpg"
                 className="card-img-top mx-auto"
                 alt="user-image" 
-                style={{width: '12rem', height:'12rem'}}
+                width={100}
+                 height={250}
+
 
                 />
                 <div className="card-body mx-auto">
@@ -165,11 +170,13 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                     })
                 }
                 </select>
-                <Link href="/dashboard/users" passHref>
-                    <button type="button" className={`btn btn-success ${styles.saveBtn}`} onClick = {saveUser}>
+                
+                <button type="button" className={`btn btn-success ${styles.saveBtn}`} onClick = {saveUser}>
+                    <Link href="/dashboard/users" >
                         <a>Save</a>
-                    </button>
-                </Link>
+                    </Link>
+                </button>
+               
                 </div>
             </div>
            </div>
