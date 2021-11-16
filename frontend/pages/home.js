@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 import cookie from 'js-cookie';
 import jwt from 'jsonwebtoken';
 const home = ({token, userName}) => {
+
+    console.log(`mode -> ${process.env.NEXT_PUBLIC_MODE}`);
     return(
         <>
             { !token ? <h1>You are not authorized</h1> :

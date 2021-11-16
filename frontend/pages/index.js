@@ -20,13 +20,3 @@ const login = () => {
 
 export default login;
 
-
-export async function getServerSideProps({req, res}){
-  
-  console.log('server', process.env.JWT_KEY);
-  return {
-      props: {   
-
-      }
-  }
-}

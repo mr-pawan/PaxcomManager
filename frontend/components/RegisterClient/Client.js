@@ -33,7 +33,7 @@ const Client = () => {
         // }
 
         //post the client data for registration:
-        const response = await axios.post('http://localhost:8000/api/client/registerClient', clientData);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_CONTEXT}/api/client/registerClient`, clientData);
         const res = await response.data;
 
         if(res.data){

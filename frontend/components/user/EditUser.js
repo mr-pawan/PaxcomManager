@@ -1,6 +1,9 @@
 import styles from './EditUser.module.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Link from 'next/link';
+import Image from 'next/image';
+
 
 const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
   
@@ -59,10 +62,15 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                 <i className={`fas fa-times-circle ${styles.cancelBtn}`} 
                     onClick={cancelBtnStatus}>
                 </i>
-                <img src="/Images/user1.jpg" className="card-img-top mx-auto" alt="..." style={{width: '12rem', height:'12rem'}}/>
+                <Image src="/Images/user1.jpg"
+                className="card-img-top mx-auto"
+                alt="user-image" 
+                style={{width: '12rem', height:'12rem'}}
+
+                />
                 <div className="card-body mx-auto">
                     <span className="card-title " style={{textTransform:'capitalize', fontSize:'1rem', fontWeight:'bold'}}>
-                            <label for="firstName">First Name</label>
+                            <label htmlFor="firstName">First Name</label>
                             <input className={styles.input} id="firstName"
                                 type="text"
                                 aria-label="set first name"
@@ -73,7 +81,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                            />
                     </span>
                     <span className="card-title " style={{textTransform:'capitalize', fontSize:'1rem', fontWeight:'bold'}}>
-                        <label for="lastName">Last Name</label>
+                        <label htmlFor="lastName">Last Name</label>
                             
                             <input className={styles.input} id="lastName"
                                 type="text"
@@ -87,7 +95,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                 </div>
                 <ul className="list-group list-group-flush">
                 <li className={`list-group-item ${styles.listGroup}`}>
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                          <input className={styles.input} id="email"
                             type="text"
                             aria-label="set email"
@@ -99,9 +107,9 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                   </li>
                   <li className={`list-group-item ${styles.listGroup}`}>
                      
-                     <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <select class="form-select" aria-label="select gender"
+                     <div className="form-group">
+                        <label htmlFor="gender">Gender</label>
+                        <select className="form-select" aria-label="select gender"
                         onChange={(event) => {setGender(event.target.value)}}>
                             <option selected>Gender</option>
                             <option value="male">Male</option>
@@ -111,8 +119,8 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                     </div>
                      
                       <div>
-                        <label for="dob">Date of Birth</label>
-                        <input type="Date" className="form-control mt-1" id="dob" value={dob} placeholder="Date of Birth"  autocomplete="off"
+                        <label htmlFor="dob">Date of Birth</label>
+                        <input type="Date" className="form-control mt-1" id="dob" value={dob} placeholder="Date of Birth"  autoComplete="off"
                             onChange={(event) => {setDob(event.target.value)}}
                         />
 
@@ -120,7 +128,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                   </li>                  
                   <li className={`list-group-item ${styles.listGroup}`}>
                   <div>
-                  <label for="age">Age</label>
+                  <label htmlFor="age">Age</label>
                        <input className={styles.input} id="age"
                             type="text"
                             aria-label="set age"
@@ -131,7 +139,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                        />
                   </div>
                     <div>
-                    <label for="mobile">Mobile</label>
+                    <label htmlFor="mobile">Mobile</label>
                        <input className={styles.input} id="mobile"
                             type="text"
                             aria-label="set mobile"
@@ -141,6 +149,7 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                             onKeyDown = {(event) => {if(event.key === "Enter") event.target.blur()}}
                        />
                     </div>
+
                   </li>                </ul>
                 <div className={`card-body ${styles.listGroup}`}>
                 <select className={`form-select ${styles.selectClient}`} aria-label="Default select example"
@@ -150,17 +159,17 @@ const EditUser = ({cancelBtnHandler, userData, setEditUserStatus}) => {
                     clients.map(client => {
                       
                         return(
-                            <option value={client.id}>{client.name} 
+                            <option key={client.id} value={client.id}>{client.name} 
                             </option>
                         )
                     })
                 }
                 </select>
-                <a href="/dashboard/users">
+                <Link href="/dashboard/users" passHref>
                     <button type="button" className={`btn btn-success ${styles.saveBtn}`} onClick = {saveUser}>
-                        Save
+                        <a>Save</a>
                     </button>
-                </a>
+                </Link>
                 </div>
             </div>
            </div>

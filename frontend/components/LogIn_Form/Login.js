@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import checker from './validationChecks';
 import cookie from 'js-cookie';
 import axios from 'axios';
-import { useUserContext } from '../../pages/context/state';
 import UnAuthNavbar from '../UnAuthNavbar/UnAuthNavbar';
 
 
@@ -94,7 +93,7 @@ const Login = () => {
             
                
                 <div className={styles.create}>
-                    Don't have account<Link href='/register'><a style={a_style}> SIGN UP </a></Link>
+                    Don&#39;t have account<Link href='/register'><a style={a_style}> SIGN UP </a></Link>
                 </div>
                {
                    status?<div className={styles.msg}>{msg}</div>:null

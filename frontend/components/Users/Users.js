@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import styles from './Users.module.css';
 import User from '../user/User'
 import axios from 'axios';
+import Link from 'next/link';
 
 
 const Users = () => {
@@ -70,7 +71,6 @@ const Users = () => {
 
     // delete user from database :
     const deleteUser = async() => {
-        console.log('userData', userData);
         const response = await axios.post('http://localhost:8000/api/user/delete', userData);
         const data =  await response.data;
     }
@@ -99,9 +99,8 @@ const Users = () => {
                                 </li>
                                 <li className={styles.liItem}> <i className={`fas fa-user-plus ${styles.icon}`}></i></li>
                                 <li className={styles.liItem}> 
-                                     <a href="/dashboard/users"><i className={`fas fa-user-times ${styles.icon}`}
-                                        onClick={deleteUser}></i>
-                                    </a>
+                                     <Link href="/dashboard/users"><i className={`fas fa-user-times ${styles.icon}`}
+                                     onClick={deleteUser}></i></Link>
                                 </li>
                                 <li className={styles.liItem}> <i className={`fas fa-user-edit ${styles.icon}`} 
                                 onClick = {() => setEditUserStatus(true)}></i></li>

@@ -1,13 +1,14 @@
 import styles from './UnAuthNavbar.module.css';
+import Link from 'next/link'
 const UnAuthNavbar = () => {
 return(
     <>
         <div className={`${styles.nav}`}>
         <nav className={`navbar navbar-expand-lg navbar-dark bg-dark`}>
             <div className="container-fluid">
-                <a className="navbar-brand" href="https://paxcom.ai/" target='_blank'>
-                    Paxcom
-                </a>
+                <Link className="navbar-brand" href="https://paxcom.ai/" target='_blank' rel="noreferrer">
+                    <a>Paxcom</a>
+                </Link>
             </div>
             <div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,15 +18,15 @@ return(
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                       
                       <li className="nav-item">
-                        <a className="nav-link" href="https://paxcom.ai/" target='_blank'>About</a>
+                        <Link className="nav-link" href="https://paxcom.ai/" target='_blank' rel="noreferrer"><a>About</a></Link>
                       </li>
                     
                         <li className="nav-item">
-                          <a className="nav-link" aria-current="page" href="/login">SIGN&nbsp;IN</a>
+                          <Link className="nav-link" aria-current="page" href="/login"><a>SIGN&nbsp;IN</a></Link>
                         </li>
                       
                         <li className="nav-item">
-                        <a className="nav-link" href="/register">SIGN&nbsp;UP</a>
+                        <Link className="nav-link" href="/register"><a>SIGN&nbsp;UP</a></Link>
                       </li>
                        
                     </ul>

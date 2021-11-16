@@ -1,8 +1,8 @@
 import styles from './StaticUserData.module.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import client from '../../pages/clients';
-import EditUser from './EditUser';
+import Image from 'next/image';
+
 
 const StaticUserData = ({cancelBtnHandler, userData}) => {
     // list of saved clients
@@ -29,7 +29,13 @@ const StaticUserData = ({cancelBtnHandler, userData}) => {
                 <i className={`fas fa-times-circle ${styles.cancelBtn}`} 
                     onClick={cancelBtnStatus}>
                 </i>
-                <img src="/Images/user1.jpg" className="card-img-top mx-auto" alt="..." style={{width: '12rem', height:'12rem'}}/>
+                <Image
+                 src="/Images/user1.jpg"
+                 className="card-img-top mx-auto"
+                 alt="user-image"
+                 style={{width: '12rem', height:'12rem'}}
+                     
+                 />
                 <div className="card-body mx-auto">
                     <span className="card-title " style={{textTransform:'capitalize', fontSize:'1.3rem', fontWeight:'bold'}}>{`${userData.firstName}  `}</span>
                     <span className="card-title " style={{textTransform:'capitalize', fontSize:'1.3rem', fontWeight:'bold'}}>{userData.lastName}</span>
