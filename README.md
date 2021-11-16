@@ -11,7 +11,7 @@ Project is built using Fast API server. Apis will be exposed to communicate with
  
 ### Exposed port
 frontend is exposed to port  **3000**
-backend is exposed to porn **8000** ​ 
+backend is exposed to port **8000** ​ 
 
 ## Run - Development mode
 To start the project in development mode, need to run command npm run dev 
